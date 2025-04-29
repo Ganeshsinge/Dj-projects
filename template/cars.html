@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Website</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header Styles */
+    .car-header {
+      background-color: #10a1cd;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .car-header .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #e50914;
+    }
+
+    .car-header nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .car-header nav ul li {
+      margin-left: 25px;
+    }
+
+    .car-header nav ul li a {
+      color: #cd151e;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .car-header nav ul li a:hover {
+      color: #1608e0;
+    }
+
+    /* Footer Styles */
+    .car-footer {
+      background-color: #c9cf13;
+      color: #ddd;
+      padding: 50px 20px 20px;
+    }
+
+    .car-footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .car-footer-brand,
+    .car-footer-links,
+    .car-footer-contact {
+      flex: 1 1 300px;
+    }
+
+    .car-footer-brand h2 {
+      font-size: 28px;
+      color: #e50914;
+    }
+
+    .car-footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .car-footer-links ul li {
+      margin: 10px 0;
+    }
+
+    .car-footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .car-footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .car-footer-contact p {
+      margin: 8px 0;
+    }
+
+    .car-footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      font-size: 14px;
+      color: #666;
+      border-top: 1px solid #333;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header class="car-header">';'
+    <div class="logo">DrivePro</div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/inventory">Inventory</a></li>
+        <li><a href="/service">Service</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Placeholder -->
+  <main style="padding: 40px 20px;">
+    <h1>Welcome to DrivePro Motors</h1>
+    <p>Find your dream car with us!</p>
+  </main>
+
+
+  {% block content %}
+
+  {% endblock %}
+
+  <!-- Footer Section -->
+  <footer class="car-footer">
+    <div class="car-footer-container">
+      <div class="car-footer-brand">
+        <h2>DrivePro Motors</h2>
+        <p>Your journey starts here. Find your perfect ride today.</p>
+      </div>
+
+      <div class="car-footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/inventory">Inventory</a></li>
+          <li><a href="/financing">Financing</a></li>
+          <li><a href="/test-drive">Book a Test Drive</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="car-footer-contact">
+        <h3>Contact</h3>
+        <p>📍 123 Auto Street, Motor City</p>
+        <p>📞 (123) 456-7890</p>
+        <p>✉ info@drivepromotors.com</p>
+      </div>
+    </div>
+
+    <div class="car-footer-bottom">
+      <p>&copy; 2025 DrivePro Motors. Built for Drivers, Powered by Passion.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

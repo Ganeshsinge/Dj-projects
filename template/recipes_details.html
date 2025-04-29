@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{recipes.image}}</h1>
+    <table>
+        <tr>
+            <td><img src="{{recipe.image}}" alt=""></td>
+            <strong>Ingredients</strong> <br>
+            <ol>
+                {% for j in recipe.Ingredients %}
+                <li>{{j}}</li>
+                {% endfor %}
+
+            </ol>
+            <strong>Instruction</strong> <br>
+            <ol>
+                {% for j in recipe.instruction %}
+                <li>{{j}}</li>
+                {% endfor %}
+            </ol>
+        </tr>
+    </table>
+</body>
+</html>

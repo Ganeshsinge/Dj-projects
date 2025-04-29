@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Grid</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f5f5f5; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.2s ease;
+    }
+    .card:hover { transform: scale(1.02); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 15px; }
+    .card-title { font-size: 1.2rem; margin: 0 0 10px; }
+    .tag { background: #ddd; border-radius: 4px; padding: 3px 6px; margin: 2px; display: inline-block; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+<h1>All Recipes</h1>
+<div class="grid">
+  {% for recipe in recipes %}
+  <a href="{% url 'food' recipe.id}">
+    <div class="card">
+      
+      <img src="{{ recipe.image }}" alt="{{ recipe.name }}">
+      <div class="card-body">
+        <div class="card-title">{{ recipe.name }}</div>
+        <p><strong>Prep:</strong> {{ recipe.prepTimeMinutes }} min | 
+           <strong>Cook:</strong> {{ recipe.cookTimeMinutes }} min</p>
+        <p><strong>Servings:</strong> {{ recipe.servings }} | 
+           <strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+        <p><strong>Calories:</strong> {{ recipe.caloriesPerServing }} kcal | 
+           <strong>Rating:</strong> {{ recipe.rating }} ({{ recipe.reviewCount }} reviews)</p>
+        <div>
+          {% for tag in recipe.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+          {% for type in recipe.mealType %}
+            <span class="tag">{{ type }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+</body>
